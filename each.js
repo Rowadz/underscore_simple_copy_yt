@@ -23,6 +23,12 @@ each(
   user.friends
 )
 
+/**
+ *
+ * @param {*} obj - can be an Array<any> or normal object
+ * @param {(any, any, any) => any} fun - the callback function
+ * @param {*} context - the `this`
+ */
 const each2 = (obj, fun, context) => {
   for (const key in obj) {
     context ? fun.call(context, obj[key], key, obj) : fun(obj[key], key, obj)

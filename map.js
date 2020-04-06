@@ -20,7 +20,7 @@ console.log(a, b, c)
 /**
  * normal object will be returned as array of the mapped values
  * @param {*} obj - can be an Array<any> or normal object
- * @param {(any, any, any, any) => any} fun - the callback function
+ * @param {(any, any, any) => any} fun - the callback function
  * @param {*} context - the `this`
  */
 const map2 = (obj, fun, context) => {
@@ -36,7 +36,7 @@ const map2 = (obj, fun, context) => {
 /**
  * maps the values and saves the object keys!
  * @param {*} obj - can be an Array<any> or normal object
- * @param {(any, any, any, any) => any} fun - the callback function
+ * @param {(any, any, any) => any} fun - the callback function
  * @param {*} context - the `this`
  */
 const map3 = (obj, fun, context) => {
