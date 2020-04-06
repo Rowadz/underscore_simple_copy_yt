@@ -17,7 +17,12 @@ console.log('~~~~~~~~~~~~~~~~~~~v0~~~~~~~~~~~~~~~~~')
 
 console.log(a, b, c)
 
-// normal object will be returned as array of the mapped values
+/**
+ * normal object will be returned as array of the mapped values
+ * @param {*} obj - can be an Array<any> or normal object
+ * @param {(any, any, any, any) => any} fun - the callback function
+ * @param {*} context - the `this`
+ */
 const map2 = (obj, fun, context) => {
   const holder = Object.values(obj)
   for (const key in holder) {
@@ -28,7 +33,12 @@ const map2 = (obj, fun, context) => {
   return holder
 }
 
-// maps the values and saves the object keys!
+/**
+ * maps the values and saves the object keys!
+ * @param {*} obj - can be an Array<any> or normal object
+ * @param {(any, any, any, any) => any} fun - the callback function
+ * @param {*} context - the `this`
+ */
 const map3 = (obj, fun, context) => {
   for (const key in obj) {
     obj[key] = context
