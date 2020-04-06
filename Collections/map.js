@@ -81,5 +81,13 @@ const c3 = map3(
   ],
   ([f]) => f
 )
+const d3 = map3(
+  [
+    { name: 'rowad', score: 10 },
+    { name: 'sarah', score: 20 },
+    { name: 'rowadz', score: 30 }
+  ],
+  ({ score, name }, idx, arr) => ({ name, score: score ** 2 })
+)
 
-console.log(a3, b3, c3)
+console.log(a3, b3, c3, d3)
