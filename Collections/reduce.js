@@ -22,8 +22,8 @@ const groupedData = reduce(
 )
 
 console.log('~~~~~~~~~~~~~~~~~~~v0~~~~~~~~~~~~~~~~~')
-// console.log(sum) // 6
-// console.log(groupedData) // { rowad: 50, sarah: 60 }
+console.log(sum) // 6
+console.log(groupedData) // { rowad: 50, sarah: 60 }
 
 const reduce2 = (obj, fun, memo, context) => {
   let arrHolder
