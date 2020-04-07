@@ -26,22 +26,31 @@ console.log(sum) // 6
 console.log(groupedData) // { rowad: 50, sarah: 60 }
 
 const reduce2 = (obj, fun, memo, context) => {
+  const isArr = Array.isArray(obj)
   let arrHolder
   let objHolder
-  const isArr = Array.isArray(obj)
   if (!memo) {
     if (isArr) {
       memo = obj.shift()
       arrHolder = [...obj]
+      obj.unshift(memo)
     } else {
-      const key = Object.keys(obj)[0]
+      const [key] = Object.keys(obj)
       memo = obj[key]
       objHolder = { ...obj }
       delete objHolder[key]
     }
   }
   for (const key in isArr ? arrHolder || obj : objHolder || obj) {
-    memo = fun(memo, obj[key], key, obj)
+    if (arrHolder || objHolder) {
+      memo = context
+        ? fun.call(context, memo, (arrHolder || objHolder)[key], key, obj)
+        : fun(memo, (arrHolder || objHolder)[key], key, obj)
+    } else {
+      memo = context
+        ? fun.call(context, memo, obj[key], key, obj)
+        : fun(memo, obj[key], key, obj)
+    }
   }
   return memo
 }
