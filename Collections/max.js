@@ -14,12 +14,12 @@ const max2 = (list, fun, context) => {
   for (const key in list) {
     if (fun) {
       const res = context ? fun.call(context, list[key]) : fun(list[key])
-      if (res > theMax) {
+      if (!isNaN(res) && res > theMax) {
         theMax = res
         toReturn = list[key]
       }
     } else {
-      if (list[key] > theMax) {
+      if (!isNaN(list[key]) && list[key] > theMax) {
         theMax = list[key]
         toReturn = list[key]
       }
