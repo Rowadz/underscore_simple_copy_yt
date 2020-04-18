@@ -20,16 +20,14 @@ console.log(res)
 const findWhere2 = (list, properties) => {
   const propKeys = Object.keys(properties)
   for (const item of list) {
-    for (const _ in item) {
-      let thisItem = true
-      for (const propKey of propKeys) {
-        if (!(propKey in item) || properties[propKey] !== item[propKey]) {
-          thisItem = false
-          break
-        }
+    let thisItem = true
+    for (const propKey of propKeys) {
+      if (!(propKey in item) || properties[propKey] !== item[propKey]) {
+        thisItem = false
+        break
       }
-      if (thisItem) return item
     }
+    if (thisItem) return item
   }
   return undefined
 }
