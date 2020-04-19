@@ -36,8 +36,8 @@ const reduceRight2 = (obj, fun, memo, context) => {
     const toLoop = objHolder ? Object.keys(obj).reverse() : Object.keys(objHolder).reverse()
     toLoop.forEach((_, key) => {
       memo = context
-        ? fun.call(context, memo, toLoop[key], key, obj)
-        : fun(memo, toLoop[key], key, obj)
+        ? fun.call(context, memo, (objHolder || obj)[key], key, obj)
+        : fun(memo, (objHolder || obj)[key], key, obj)
     })
   }
   return memo
