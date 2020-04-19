@@ -5,22 +5,14 @@ console.log('~~~~~~~~~~~~~~~~~~~v0~~~~~~~~~~~~~~~~~')
 
 console.log(even)
 
-/**
- * normal object will be returned as array of the mapped values
- * @param {*} obj - can be an Array<any> or normal object
- * @param {(any, any, any) => any} fun - the callback function
- * @param {*} context - the `this`
- */
-const find2 = (obj, fun, context) => {
-  const holder = Object.values(obj)
-  for (const key in holder) {
+const find2 = (list, fun, context) => {
+  for (const idx in list) {
     if (
       context
-        ? fun.call(context, holder[key], key, holder)
-        : fun(holder[key], key, holder)
-    ) {
-      return holder[key]
-    }
+        ? fun.call(context, list[idx], idx, list)
+        : fun(list[idx], idx, list)
+    )
+      return list[idx]
   }
   return undefined
 }
