@@ -16,7 +16,7 @@ const sortBy2 = (list, funOrStr, context) => {
   if (typeof funOrStr === 'function')
     context ? funOrStr.bind(context) : funOrStr
   if (typeof funOrStr === 'string') realFun = funOrStr
-  return Object.values(list)
+  return list
     .map((val, idx) => ({
       val,
       idx,
