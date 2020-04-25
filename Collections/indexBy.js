@@ -10,6 +10,7 @@ console.log(indexBy(stooges, 'age'));
 
 const indexBy2 = (list, funOrStr, context) => {
   const isFunc = typeof funOrStr === 'function';
+  if (isFunc) funOrStr = context ? funOrStr.bind(context) : funOrStr
   const values = Object.values(list);
   return values.reduce(
     (prev, curr) => ({
