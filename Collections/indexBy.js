@@ -1,15 +1,15 @@
-const { indexBy } = require("underscore");
+const { indexBy } = require('underscore');
 
 const stooges = [
-  { name: "moe", age: 40 },
-  { name: "larry", age: 50 },
-  { name: "curly", age: 60 },
+  { name: 'moe', age: 40 },
+  { name: 'larry', age: 50 },
+  { name: 'curly', age: 60 },
 ];
 
-console.log(indexBy(stooges, "age"));
+console.log(indexBy(stooges, 'age'));
 
 const indexBy2 = (list, funOrStr, context) => {
-  const isFunc = typeof funOrStr === "function";
+  const isFunc = typeof funOrStr === 'function';
   const values = Object.values(list);
   return values.reduce(
     (prev, curr) => ({
@@ -20,4 +20,5 @@ const indexBy2 = (list, funOrStr, context) => {
   );
 };
 
-console.log(indexBy2(stooges, "age"));
+console.log(indexBy2(stooges, 'age'));
+console.log(indexBy2(stooges, ({ age }) => age));
