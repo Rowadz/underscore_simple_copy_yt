@@ -4,8 +4,7 @@ console.log(contains([1, 2, 3], 3))
 console.log(contains({ sex: 'M', name: 'rowad', age: 22 }, 'rowad'))
 
 const contains2 = (list, value, idx) => {
-  const vals = Object.values(list)
-  for (let i = idx || 0; i < vals.length; i++) {
+  for (let i = idx || 0; i < list.length; i++) {
     if (vals[i] === value) return true
   }
   return false
