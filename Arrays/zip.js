@@ -1,7 +1,7 @@
 const { zip } = require('underscore');
 
 const data = [
-  ['moe', 'larry', 'curly', 'rowad'],
+  ['moe', 'larry', 'curly'],
   [30, 40, 50, 99],
   [true, false, false, true],
 ];
