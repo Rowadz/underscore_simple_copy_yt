@@ -12,15 +12,14 @@ const uniq2 = (array, _, fun) => {
   const map = {};
   const res = [];
   for (const item of array) {
-    let val;
+    let val = item;
     if (fun) val = fun(item);
-    else val = item;
     if (!map[val]) {
       map[val] = true;
       res.push(item);
     }
   }
-  return res
+  return res;
 };
 
 console.log(uniq2([1, 2, 1, 4, 1, 3]));
